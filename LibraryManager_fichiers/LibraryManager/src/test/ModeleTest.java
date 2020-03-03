@@ -1,4 +1,4 @@
-import java.*;
+import main.java.*;
 
 public class ModeleTest {
 
