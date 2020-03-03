@@ -1,3 +1,4 @@
+package class_dir;
 public class Livre{
     int id;
     String titre;

@@ -1,4 +1,7 @@
-import main.java.*;
+package test;
+
+import java.util.Date;
+import class_dir.*;
 
 public class ModeleTest {
 

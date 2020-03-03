@@ -1,3 +1,4 @@
+package class_dir;
 public class Membre{
     int id;
     String nom;
