@@ -1,2 +1,14 @@
+com/excilys/librarymanager/impl/MembreDaoImpl.class
+test/ModeleTest.class
+com/excilys/librarymanager/exception/DaoException.class
+com/excilys/librarymanager/modele/Membre.class
 com/excilys/librarymanager/utils/FillDatabase.class
+com/excilys/librarymanager/modele/Abonnement.class
+com/excilys/librarymanager/modele/Livre.class
+com/excilys/librarymanager/interfaces/LivreDao.class
+com/excilys/librarymanager/modele/Emprunt.class
+com/excilys/librarymanager/impl/EmpruntDaoImpl.class
+com/excilys/librarymanager/impl/LivreDaoImpl.class
 com/excilys/librarymanager/persistence/ConnectionManager.class
+com/excilys/librarymanager/interfaces/MembreDao.class
+com/excilys/librarymanager/interfaces/EmpruntDao.class
