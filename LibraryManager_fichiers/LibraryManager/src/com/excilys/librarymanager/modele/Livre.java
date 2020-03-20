@@ -12,4 +12,19 @@ public class Livre{
         this.auteur=auteur;
         this.isbn=isbn;
     }
+
+    public int getId(){
+        return(id);
+    }
+    public String getTitre(){
+        return titre;
+    }
+
+    public String getAuteur(){
+        return auteur;
+    }
+
+    public String getIsnb(){
+        return isbn;
+    }
 }

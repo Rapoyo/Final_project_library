@@ -17,4 +17,23 @@ public class Emprunt{
         this.dateRetour=dateRetour;
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public Membre getIdMembre(){
+        return idMembre;
+    }
+
+    public Livre getIdLivre(){
+        return idLivre;
+    }
+
+    public LocalDate getDateEmprunt(){
+        return dateEmprunt;
+    }
+
+    public LocalDate getDateRetour(){
+        return dateRetour;
+    }
 }
