@@ -102,15 +102,16 @@ public class LivreDaoImpl implements LivreDao {
             connection = ConnectionManager.getConnection();
             
             insertPreparedStatement = connection.prepareStatement("UPDATE livre SET titre = ?, auteur = ?, isbn = ? WHERE id = ?;");
-            insertPreparedStatement.setString(1,livre.titre);
-            insertPreparedStatement.setString(2,auteur);
-            insertPreparedStatement.setString(3,isbn);
+            insertPreparedStatement.setString(1,livre.getTitre());
+            insertPreparedStatement.setString(2,livre.getAuteur());
+            insertPreparedStatement.setString(3,livre.getIsnb());
+            insertPreparedStatement.setInt(4,livre.getId());
 
             insertPreparedStatement.executeQuery();
             
         } catch (Exception e) {
             e.printStackTrace();
-            throw new DaoException("Erreur dans Livre create");
+            throw new DaoException("Erreur dans Livre update");
         }
 
 
@@ -120,12 +121,44 @@ public class LivreDaoImpl implements LivreDao {
     public void delete(int id) throws DaoException {
         // TODO Auto-generated method stub
 
+        Connection connection = null;
+        PreparedStatement insertPreparedStatement = null;
+        try {
+            connection = ConnectionManager.getConnection();
+            
+            insertPreparedStatement = connection.prepareStatement("DELETE FROM livre WHERE id = ?;");
+            insertPreparedStatement.setInt(1,id);
+
+            insertPreparedStatement.executeQuery();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DaoException("Erreur dans Livre delete");
+        }
+
+
     }
 
     @Override
     public int count() throws DaoException {
         // TODO Auto-generated method stub
-        return 0;
+
+        Connection connection = null;
+        Statement stmt = null;
+        try {
+            connection = ConnectionManager.getConnection();
+            stmt = connection.createStatement();
+
+            stmt.executeQuery("SELECT COUNT(id) AS count FROM livre;");
+            ResultSet result = stmt.getResultSet();
+            int count=result.getInt("count");
+            return count;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DaoException("Erreur dans Livre count");
+        }
+
     }
 
 }
