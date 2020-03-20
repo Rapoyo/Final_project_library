@@ -24,9 +24,6 @@ public class EmpruntDaoImpl implements EmpruntDao {
         try {
             connection = ConnectionManager.getConnection();
             stmt = connection.createStatement();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
             stmt.executeQuery("SELECT e.id AS id, idMembre, nom, prenom, adresse, email," +
             "telephone, abonnement, idLivre, titre, auteur, isbn, dateEmprunt, dateRetour" +
             "FROM emprunt AS e" +
@@ -47,7 +44,6 @@ public class EmpruntDaoImpl implements EmpruntDao {
                 Abonnement abonnement = result.getString("abonnement");
                 Membre membre = new Membre(idMembre, nom, prenom, adresse, email, telephone, abonnement);
 
-
                 int idLivre = result.getInt("idLivre");
                 String titre = result.getString("titre");
                 String auteur = result.getString("auteur");
@@ -60,9 +56,12 @@ public class EmpruntDaoImpl implements EmpruntDao {
                 Emprunt emprunt = new Emprunt(id, membre, livre, dateEmprunt, dateRetour);
                 listEmprunt.add(emprunt);
             }
-        
-        
-        return null;
+
+            return listEmprunt
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
