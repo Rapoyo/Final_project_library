@@ -12,6 +12,17 @@ import com.excilys.librarymanager.persistence.ConnectionManager;
 
 public class LivreDaoImpl implements LivreDao {
 
+    private static LivreDaoImpl instance;
+
+    private LivreDaoImpl() {}
+
+    public static LivreDaoImpl getInstance() {
+        if(instance == null) {
+            instance = new LivreDaoImpl();
+        }
+        return instance;
+    }
+
     @Override
     public List<Livre> getList() throws DaoException {
         // TODO Auto-generated method stub
