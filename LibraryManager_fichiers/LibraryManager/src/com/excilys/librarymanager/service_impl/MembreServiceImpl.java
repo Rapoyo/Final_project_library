@@ -35,8 +35,9 @@ public class MembreServiceImpl implements MembreService{
 
 	public int create(String nom, String prenom, String adresse, String email, String telephone) throws ServiceException{
         try {
+            if (nom==null || nom.equals("") || prenom==null || prenom.equals("")) throw new ServiceException("Nom ou prenom du membre vide");
             MembreDaoImpl instance=MembreDaoImpl.getInstance();
-            return(instance.create(nom,prenom,adresse,email,telephone));
+            return(instance.create(nom.toUpperCase(),prenom,adresse,email,telephone));
         } catch (Exception e) {
             throw new ServiceException("Error in Membre.create");
         }
@@ -44,7 +45,9 @@ public class MembreServiceImpl implements MembreService{
 
 	public void update(Membre membre) throws ServiceException{
         try {
+            if (membre.getNom()==null || membre.getNom().equals("") || membre.getPrenom()==null || membre.getPrenom().equals("")) throw new ServiceException("Nom ou prenom du membre vide");
             MembreDaoImpl instance=MembreDaoImpl.getInstance();
+            membre.setNom(membre.getNom().toUpperCase());
             instance.update(membre);
         } catch (Exception e) {
             throw new ServiceException("Error in Membre.update");

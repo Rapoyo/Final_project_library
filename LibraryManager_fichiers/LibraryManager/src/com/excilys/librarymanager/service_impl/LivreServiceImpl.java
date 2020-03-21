@@ -35,6 +35,7 @@ public class LivreServiceImpl implements LivreService{
 
     public int create(String titre, String auteur, String isbn) throws ServiceException{
         try {
+            if (titre==null || titre.equals("")) throw new ServiceException("Titre du livre vide");
             LivreDaoImpl instance=LivreDaoImpl.getInstance();
             return(instance.create(titre, auteur, isbn));
         } catch (Exception e) {
@@ -44,6 +45,7 @@ public class LivreServiceImpl implements LivreService{
 
     public void update(Livre livre) throws ServiceException{
         try {
+            if (livre.getTitre()==null || livre.getTitre().equals("")) throw new ServiceException("Titre du livre vide");
             LivreDaoImpl instance=LivreDaoImpl.getInstance();
             instance.update(livre);
         } catch (Exception e) {

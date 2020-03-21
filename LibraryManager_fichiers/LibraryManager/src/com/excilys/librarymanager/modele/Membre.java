@@ -46,4 +46,8 @@ public class Membre{
     public Abonnement getAbonnement(){
         return abonnement;
     }
+
+    public void setNom(String newNom){
+        nom=newNom;
+    }
 }
