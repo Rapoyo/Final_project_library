@@ -99,9 +99,7 @@ public class MembreDaoImpl implements MembreDao {
             insertPreparedStatement.executeUpdate();
             
             ResultSet result = insertPreparedStatement.getGeneratedKeys();
-            if (result.next()) {
-                return result.getInt(1);
-            }
+            if (result.next()) return result.getInt(1);
             return(-1);
 
         } catch (Exception e) {

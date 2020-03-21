@@ -44,7 +44,7 @@ public class EmpruntDaoImpl implements EmpruntDao {
                 String abo = result.getString("abonnement");
                 Abonnement abonnement;
                 if (abo.equals("BASIC")) abonnement = Abonnement.BASIC;
-                else if (abo.equals("PREMIUM")) abonnement =Abonnement.PREMIUM;
+                else if (abo.equals("PREMIUM")) abonnement = Abonnement.PREMIUM;
                 else abonnement = Abonnement.VIP;
                 Membre membre = new Membre(idMembre, nom, prenom, adresse, email, telephone, abonnement);
 
@@ -321,8 +321,8 @@ public class EmpruntDaoImpl implements EmpruntDao {
             stmt = connection.createStatement();
             stmt.executeQuery("SELECT COUNT(id) AS count FROM emprunt;");
             ResultSet result = stmt.getResultSet();
-            
-            return result.getInt("count");
+            if (result.next()) return result.getInt("count");
+            return 0;
 
         } catch (Exception e) {
             throw new DaoException("Erreur dans Emprunt->count()");

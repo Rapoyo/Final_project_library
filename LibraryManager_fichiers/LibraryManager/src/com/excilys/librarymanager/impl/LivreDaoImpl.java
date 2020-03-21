@@ -81,9 +81,7 @@ public class LivreDaoImpl implements LivreDao {
             insertPreparedStatement.executeUpdate();
 
             ResultSet result = insertPreparedStatement.getGeneratedKeys();
-            if (result.next()) {
-                return result.getInt(1);
-            }
+            if (result.next()) return result.getInt(1);
             return(-1);
 
         } catch (Exception e) {
@@ -133,8 +131,8 @@ public class LivreDaoImpl implements LivreDao {
             stmt = connection.createStatement();
             stmt.executeQuery("SELECT COUNT(id) AS count FROM livre;");
             ResultSet result = stmt.getResultSet();
-
-            return result.getInt("count");
+            if (result.next()) return result.getInt("count");
+            return 0;
             
         } catch (Exception e) {
             throw new DaoException("Erreur dans Livre->count()");
