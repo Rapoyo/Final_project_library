@@ -1,3 +1,5 @@
+package com.excilys.librarymanager.interfaces_service;
+
 import java.util.List;
 
 import com.excilys.librarymanager.exception.ServiceException;
