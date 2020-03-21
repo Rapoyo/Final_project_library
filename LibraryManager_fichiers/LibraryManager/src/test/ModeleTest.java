@@ -11,6 +11,6 @@ public class ModeleTest {
         System.out.println(bible);
         System.out.println(davy);
         System.out.println(empruntDuPetitDavy);
-        System.out.println(Abonnement.BASIC);
+        System.out.println(Abonnement.BASIC.name());
     }
 }

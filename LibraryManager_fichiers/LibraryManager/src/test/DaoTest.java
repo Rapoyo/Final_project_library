@@ -14,10 +14,8 @@ public class DaoTest {
         try {
             membres = object.getList();
             System.out.println(object.count());
-       /* } catch (DaoException e) {
-            e.printStackTrace();*/
-        } catch (Exception e1) {
-            e1.printStackTrace();
+        } catch (DaoException e) {
+            e.printStackTrace();
         }
 
         for (Membre m : membres) {
@@ -29,10 +27,8 @@ public class DaoTest {
             membres = object.getList();
             System.out.println();
             System.out.println(object.count());
-       /* } catch (DaoException e) {
-            e.printStackTrace();*/
-        } catch (Exception e1) {
-            e1.printStackTrace();
+        } catch (DaoException e) {
+            e.printStackTrace();
         }
 
         for (Membre m : membres) {
