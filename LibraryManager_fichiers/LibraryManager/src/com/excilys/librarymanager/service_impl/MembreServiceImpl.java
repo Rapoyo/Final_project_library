@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.excilys.librarymanager.exception.ServiceException;
+import com.excilys.librarymanager.modele.Abonnement;
 import com.excilys.librarymanager.modele.Membre;
 import com.excilys.librarymanager.interfaces_service.MembreService;
 import com.excilys.librarymanager.impl.MembreDaoImpl;
+import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
 
 public class MembreServiceImpl implements MembreService{
 
@@ -21,7 +23,21 @@ public class MembreServiceImpl implements MembreService{
         }
     }
 
-    //public List<Membre> getListMembreEmpruntPossible() throws ServiceException;
+    public List<Membre> getListMembreEmpruntPossible() throws ServiceException{
+        try {
+            MembreDaoImpl instance=MembreDaoImpl.getInstance();
+            List<Membre> listMembre=instance.getList();
+            List<Membre> listPossible=new ArrayList<Membre>();
+            for(int i=0; i<listMembre.size(); i++){
+                EmpruntServiceImpl aux=new EmpruntServiceImpl();
+                Membre current=listMembre.get(i);
+                if (aux.isEmpruntPossible(current)) listPossible.add(current);
+            }
+            return(listPossible);
+        } catch (Exception e){
+            throw new ServiceException("Error in Membre.getListMembreEmpruntPossible");
+        }
+    }
     
 	public Membre getById(int id) throws ServiceException{
         try {

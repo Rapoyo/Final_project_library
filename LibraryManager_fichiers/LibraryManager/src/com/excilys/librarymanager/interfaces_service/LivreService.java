@@ -8,7 +8,7 @@ import com.excilys.librarymanager.modele.Livre;
 public interface LivreService {
 
 	public List<Livre> getList() throws ServiceException;
-	//public List<Livre> getListDispo() throws ServiceException; //à rajouter si on comprend pq cette méthode n'est pas dans le DAO
+	public List<Livre> getListDispo() throws ServiceException;
 	public Livre getById(int id) throws ServiceException;
 	public int create(String titre, String auteur, String isbn) throws ServiceException;
 	public void update(Livre livre) throws ServiceException;

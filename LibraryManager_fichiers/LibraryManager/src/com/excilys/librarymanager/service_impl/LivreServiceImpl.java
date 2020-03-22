@@ -7,6 +7,7 @@ import com.excilys.librarymanager.exception.ServiceException;
 import com.excilys.librarymanager.modele.Livre;
 import com.excilys.librarymanager.interfaces_service.LivreService;
 import com.excilys.librarymanager.impl.LivreDaoImpl;
+import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
 
 public class LivreServiceImpl implements LivreService{
 
@@ -20,7 +21,21 @@ public class LivreServiceImpl implements LivreService{
         }
     }
 
-    //public List<Livre> getListDispo() throws ServiceException; //Cf interface
+    public List<Livre> getListDispo() throws ServiceException{
+        try {
+            LivreDaoImpl instance=LivreDaoImpl.getInstance();
+            List<Livre> listLivre=instance.getList();
+            List<Livre> listPossible=new ArrayList<Livre>();
+            for (int i=0; i<listLivre.size(); i++){
+                Livre current=listLivre.get(i);
+                EmpruntServiceImpl aux=new EmpruntServiceImpl();
+                if (aux.isLivreDispo(current.getId())) listPossible.add(current);
+            }
+            return(listPossible);
+        } catch (Exception e) {
+            throw new ServiceException("Error in Livre.getListDispo");
+        }
+    }
 
     public Livre getById(int id) throws ServiceException{
         try {

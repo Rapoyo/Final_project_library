@@ -36,4 +36,8 @@ public class Emprunt{
     public LocalDate getDateRetour(){
         return dateRetour;
     }
+
+    public void setDateRetour(LocalDate date){
+        dateRetour=date;
+    }
 }
