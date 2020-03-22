@@ -14,6 +14,13 @@ import com.excilys.librarymanager.modele.Abonnement;;
 
 public class EmpruntServiceImpl implements EmpruntService{
 
+    private static EmpruntServiceImpl instance;
+    
+    public static EmpruntServiceImpl getInstance(){
+        if (instance == null) instance = new EmpruntServiceImpl();
+        return instance;
+    }
+
 
     public List<Emprunt> getList() throws ServiceException{
         try {

@@ -12,6 +12,13 @@ import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
 
 public class MembreServiceImpl implements MembreService{
 
+    private static MembreServiceImpl instance;
+    
+    public static MembreServiceImpl getInstance(){
+        if (instance == null) instance = new MembreServiceImpl();
+        return instance;
+    }
+
     public List<Membre> getList() throws ServiceException
     {
         try {
@@ -29,7 +36,7 @@ public class MembreServiceImpl implements MembreService{
             List<Membre> listMembre=instance.getList();
             List<Membre> listPossible=new ArrayList<Membre>();
             for(int i=0; i<listMembre.size(); i++){
-                EmpruntServiceImpl aux=new EmpruntServiceImpl();
+                EmpruntServiceImpl aux=EmpruntServiceImpl.getInstance();
                 Membre current=listMembre.get(i);
                 if (aux.isEmpruntPossible(current)) listPossible.add(current);
             }

@@ -11,6 +11,13 @@ import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
 
 public class LivreServiceImpl implements LivreService{
 
+    private static LivreServiceImpl instance;
+    
+    public static LivreServiceImpl getInstance(){
+        if (instance == null) instance = new LivreServiceImpl();
+        return instance;
+    }
+
     public List<Livre> getList() throws ServiceException{
         try {
             LivreDaoImpl instance=LivreDaoImpl.getInstance();
@@ -28,7 +35,7 @@ public class LivreServiceImpl implements LivreService{
             List<Livre> listPossible=new ArrayList<Livre>();
             for (int i=0; i<listLivre.size(); i++){
                 Livre current=listLivre.get(i);
-                EmpruntServiceImpl aux=new EmpruntServiceImpl();
+                EmpruntServiceImpl aux=EmpruntServiceImpl.getInstance();
                 if (aux.isLivreDispo(current.getId())) listPossible.add(current);
             }
             return(listPossible);
