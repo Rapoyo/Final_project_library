@@ -1,4 +1,4 @@
-package com.excilys.librarymanager.impl;
+package com.excilys.librarymanager.impl.dao;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.excilys.librarymanager.persistence.ConnectionManager;
 import com.excilys.librarymanager.exception.DaoException;
-import com.excilys.librarymanager.interfaces.EmpruntDao;
+import com.excilys.librarymanager.interfaces.dao.EmpruntDao;
 import com.excilys.librarymanager.modele.*;
 
 public class EmpruntDaoImpl implements EmpruntDao {

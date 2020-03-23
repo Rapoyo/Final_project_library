@@ -1,4 +1,4 @@
-package com.excilys.librarymanager.interfaces;
+package com.excilys.librarymanager.interfaces.dao;
 
 import java.util.List;
 

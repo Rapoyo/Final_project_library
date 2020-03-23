@@ -1,4 +1,4 @@
-package com.excilys.librarymanager.interfaces_service;
+package com.excilys.librarymanager.interfaces.services;
 
 import java.util.List;
 

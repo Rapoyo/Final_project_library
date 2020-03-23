@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.excilys.librarymanager.exception.DaoException;
-import com.excilys.librarymanager.impl.MembreDaoImpl;
+import com.excilys.librarymanager.impl.dao.MembreDaoImpl;
 import com.excilys.librarymanager.modele.*;
 
 public class DaoTest {

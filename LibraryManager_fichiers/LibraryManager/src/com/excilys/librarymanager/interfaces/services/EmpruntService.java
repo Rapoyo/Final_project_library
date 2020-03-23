@@ -1,5 +1,4 @@
-package com.excilys.librarymanager.interfaces_service;
-
+package com.excilys.librarymanager.interfaces.services;
 
 import java.time.LocalDate;
 import java.util.List;

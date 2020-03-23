@@ -1,14 +1,13 @@
-package com.excilys.librarymanager.service_impl;
+package com.excilys.librarymanager.impl.services;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.time.LocalDate;
 
 
 import com.excilys.librarymanager.exception.ServiceException;
 import com.excilys.librarymanager.modele.Emprunt;
-import com.excilys.librarymanager.interfaces_service.EmpruntService;
-import com.excilys.librarymanager.impl.EmpruntDaoImpl;
+import com.excilys.librarymanager.interfaces.services.EmpruntService;
+import com.excilys.librarymanager.impl.dao.EmpruntDaoImpl;
 import com.excilys.librarymanager.modele.Membre;
 import com.excilys.librarymanager.modele.Abonnement;;
 

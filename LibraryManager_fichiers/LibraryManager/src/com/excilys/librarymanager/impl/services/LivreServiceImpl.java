@@ -1,13 +1,12 @@
-package com.excilys.librarymanager.service_impl;
+package com.excilys.librarymanager.impl.services;
 
 import java.util.List;
 import java.util.ArrayList;
 
 import com.excilys.librarymanager.exception.ServiceException;
 import com.excilys.librarymanager.modele.Livre;
-import com.excilys.librarymanager.interfaces_service.LivreService;
-import com.excilys.librarymanager.impl.LivreDaoImpl;
-import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
+import com.excilys.librarymanager.interfaces.services.LivreService;
+import com.excilys.librarymanager.impl.dao.LivreDaoImpl;
 
 public class LivreServiceImpl implements LivreService{
 

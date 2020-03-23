@@ -1,14 +1,12 @@
-package com.excilys.librarymanager.service_impl;
+package com.excilys.librarymanager.impl.services;
 
 import java.util.List;
 import java.util.ArrayList;
 
 import com.excilys.librarymanager.exception.ServiceException;
-import com.excilys.librarymanager.modele.Abonnement;
 import com.excilys.librarymanager.modele.Membre;
-import com.excilys.librarymanager.interfaces_service.MembreService;
-import com.excilys.librarymanager.impl.MembreDaoImpl;
-import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
+import com.excilys.librarymanager.interfaces.services.MembreService;
+import com.excilys.librarymanager.impl.dao.MembreDaoImpl;
 
 public class MembreServiceImpl implements MembreService{
 

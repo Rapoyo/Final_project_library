@@ -6,9 +6,7 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 import java.io.IOException;
 
-import com.excilys.librarymanager.service_impl.EmpruntServiceImpl;
-import com.excilys.librarymanager.service_impl.LivreServiceImpl;
-import com.excilys.librarymanager.service_impl.MembreServiceImpl;
+import com.excilys.librarymanager.impl.services.*;
 import com.excilys.librarymanager.modele.*;
 
 
